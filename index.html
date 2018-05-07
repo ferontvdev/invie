@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" user-scalable="no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/invie.css"/>
     <!-- <link rel="stylesheet" media="(max-width: 800px)"href="css/media-querie.css" /> -->
@@ -111,9 +111,11 @@
     <script>
       var $burgerButton = document.getElementById('burger-button');
       var $menu = document.getElementById('menu');
-      $burgerButton.addEventListener('touchstart', function() {
+      $burgerButton.addEventListener('touchstart', toggleMenu);
+      
+      function toggleMenu() {
         $menu.classList.toggle('active')
-      })
+      };
     </script>
   </body>
 </html>
