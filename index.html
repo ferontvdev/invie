@@ -17,7 +17,8 @@
           <!-- logotipo -->
           <img src="./images//invie.png" width="186" height="60" alt="Invie logotipo" />
         </figure>
-        <nav class="menu">
+        <span class="burger-button icon-menu" id="burger-button"></span>
+        <nav class="menu" id="menu">
           <!-- menu -->
           <ul>
             <li>
@@ -107,5 +108,12 @@
         </form>
       </div>
     </footer>
+    <script>
+      var $burgerButton = document.getElementById('burger-button');
+      var $menu = document.getElementById('menu');
+      $burgerButton.addEventListener('touchstart', function() {
+        $menu.classList.toggle('active')
+      })
+    </script>
   </body>
 </html>
