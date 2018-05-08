@@ -293,6 +293,7 @@ input:focus, textarea:focus {
   position: absolute;
   left: 20px;
   top: 20px;
+  color: white;
   z-index: 3;
 }
 
@@ -301,6 +302,15 @@ input:focus, textarea:focus {
     width: auto;
     max-width: 800px;
   } */
+  /* precios */
+  .table {
+    margin: 50px 20px;
+  }
+  .table .contenedor {
+    overflow: auto;
+    border: 1px solid #273b47;
+  }
+  /* precios */
   /* portada */
   .titulo {
     font-size: 45px;
@@ -416,6 +426,13 @@ input:focus, textarea:focus {
 @media screen and (max-width: 500px) {
   /* portada */
   .portada .contenedor {
+    position: static;
+  }
+  .header {
+    position: static;
+  }
+
+  .header .contenedor {
     position: static;
   }
   .menu {
