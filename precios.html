@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Allerta" rel="stylesheet">
     <title>Precios de tus mejores guitarras</title>
   </head>
-  <body>
+  <body class="precios">
     <header id="header" class="header background"><!-- header -->
       <div class="contenedor">
         <figure class="logotipo"><!-- logotipo -->
@@ -116,17 +116,23 @@
         </form>
       </div>
     </footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blazy/1.8.2/blazy.min.js"></script>
     <script>
       var consulta = window.matchMedia('(max-width: 500px)')
       consulta.addListener(mediaQuery);
-
+      
       var $burgerButton = document.getElementById('burger-button');
       var $menu = document.getElementById('menu');
       function toggleMenu() {
-        $menu.classList.toggle('active')
-
+        $menu.classList.toggle('active');
         $burgerButton.classList.toggle('icon-close');
+      };
+      function showMenu() {
+        $menu.classList.add('active');
+      };
+      function hideMenu() {
+        $menu.classList.remove('active');
       };
 
       function mediaQuery() {
@@ -137,18 +143,25 @@
         } else {
           console.log('no se cumple');
           $burgerButton.removeEventListener('touchstart', toggleMenu);
-        }
+        } 
       }
       mediaQuery();
       // lazy loading
       var bLazy = new Blazy({
         selector: 'img'
       });
-          // $burgerButton.addEventListener('touchstart', toggleMenu);
+      // $burgerButton.addEventListener('touchstart', toggleMenu);
 
-          // function toggleMenu() {
-          //   $menu.classList.toggle('active')
-          // };
+      // function toggleMenu() {
+      //   $menu.classList.toggle('active')
+      // };
+
+      // Gestos touch
+      var $body = document.body;
+
+      var gestos = new Hammer($body);
+      gestos.on('swipeleft', hideMenu);
+      gestos.on('swiperight', showMenu);
     </script>
   </body>
 </html>
